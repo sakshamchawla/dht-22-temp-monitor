@@ -1,0 +1,13 @@
+[Unit]
+Description=Temperature and Humidity Monitor Service
+After=syslog.target network.target
+
+[Service]
+Restart=always
+WorkingDirectory=/home/saksham/temp-monitor
+ExecStart=python3 reader.py
+RestartSec=120
+User=saksham
+
+[Install]
+WantedBy=multi-user.target

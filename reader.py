@@ -1,12 +1,14 @@
 import time
 import adafruit_dht
 import board
-from database import *
+from services.database import *
+from services.api import *
 
 dht_device = adafruit_dht.DHT22(board.D23)
 
 def main():
     conn = set_up_db()
+    go()
     while True:
         try:
             temperature_c = dht_device.temperature

@@ -1,8 +1,0 @@
-<<<<<<< HEAD
-services/keys
-=======
-services/keys
-env/
-__pycache__
-services/__pycache__
->>>>>>> refs/remotes/origin/master

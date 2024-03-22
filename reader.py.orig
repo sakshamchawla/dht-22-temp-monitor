@@ -1,7 +1,10 @@
 import time
 import adafruit_dht
 import board
+<<<<<<< HEAD
 import threading
+=======
+>>>>>>> refs/remotes/origin/master
 from services.database import *
 from services.api import *
 

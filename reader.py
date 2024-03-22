@@ -1,11 +1,13 @@
 import time
 import adafruit_dht
 import board
-from database import *
+import threading
+from services.database import *
+from services.api import *
 
 dht_device = adafruit_dht.DHT22(board.D23)
 
-def main():
+def temps():
     conn = set_up_db()
     while True:
         try:
@@ -19,6 +21,13 @@ def main():
             print(err.args[0])
 
         time.sleep(60.0)
+
+def main():
+    threading.Thread(target=go,
+                    daemon=False).start()    
+
+    threading.Thread(target=temps,
+                    daemon=False).start()    
 
 if __name__ == '__main__':
     main()
